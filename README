@@ -23,6 +23,8 @@ I followed below posts and customize the code :
 http://www.rorexperts.com/twitter-callbacks-using-in-ruby-on-rails-t2386.html
 http://www.rorexperts.com/facebook-callback-for-share-a-message-t2244.html
 
+Before this I have created new application , configure database and created posts controller  . After all are working I have followed above posts and customize .
+
 In post/new.html.erb
 -----------------------
 # Incldue below js file for tweet button 
@@ -67,8 +69,13 @@ twttr.events.bind('tweet', tweetIntentToAnalytics);
    <%= image_tag "fshare1.png" , :alt => "fshare"%>
  </a>  
 
+## For app id register in facebook developers site .
 *** Here redirect_uri variable is important . You can pass like also
 http://localhost:3000/your controller / your method name
+
+## Here I have redirected to posts controller index method . 
+redirect_uri=http://localhost:3000/posts/"
+This page code has given below .
 
 *** facebook app_id return url address and redirect_uri must be same . 
 
@@ -82,11 +89,15 @@ In post/index.html.erb
 
 Using the Call backs :
 -----------------------
+Run the server, 
 
-Before this I have created new application , configure database and created products scaffold . After all are working I created google data table .
-I am showin results at  below url :
-http://localhost:3000/items/products.
+rails s
+    
+Go to localhost:3000/post/new  on your browser and make sure everything is running just fine.
 
+If you use tweet button and tweet , after successful tweet from your account then you will get alert .
+
+If you use fshare button and psot message , after successful from your account , it will pulish on your facebook wall and redirect to specified method with taht post id  in our site .
 
 
 Thanks & Regards,
