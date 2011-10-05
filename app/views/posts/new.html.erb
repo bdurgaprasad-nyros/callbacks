@@ -1,0 +1,38 @@
+	  
+ <%= javascript_include_tag "http://platform.twitter.com/widgets.js" %>
+ 
+
+
+<a href="https://twitter.com/share" class="twitter-share-button" data-count="vertical">Tweet</a>
+
+
+<a href="http://www.facebook.com/dialog/feed?
+  app_id=255583841131458&
+  link=http://developers.facebook.com/docs/reference/dialogs/&
+  picture=http://4.bp.blogspot.com/-FcfNqJC--Tc/TmnlCXf3XYI/AAAAAAAAAVs/98-2YSXBfOw/s320/socail_nt.jpg&  
+  name=Nyros Technologies&
+  caption=Callbacks Application&
+  description=Facebok and twitter callbacks&
+  message=HI Friendssssssss&
+  redirect_uri=http://localhost:3000/posts/" >
+
+   <%= image_tag "fshare1.png" , :alt => "fshare"%>
+ </a>  
+
+
+<script type="text/javascript">
+// This below function executes after successful tweet any one from this webpage
+function tweetIntentToAnalytics(intent_event) {
+
+if (intent_event) {
+alert("Your tweet posted success fully ")
+// here write your code after successful tweet
+
+};
+
+}
+
+// here bind the above function for tweet button .
+twttr.events.bind('tweet', tweetIntentToAnalytics);
+
+</script> 
