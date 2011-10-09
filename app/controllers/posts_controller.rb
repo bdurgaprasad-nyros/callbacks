@@ -1,5 +1,9 @@
 class PostsController < ApplicationController
-  def index
+ 
+
+
+# This is for sample ..
+ def index
   end
 
   def new
